@@ -41,22 +41,10 @@ void Game::Update() {
 				sf::Vector2f v2f = (v2 * (m2 - m1) + 2 * m2 * v1) / (m1 + m2);
 				m_objects[i].ChangeVelocity(v1f);
 				m_objects[j].ChangeVelocity(v2f);
-				//printf("Hit");
 			}
 		}
 	}
-	//if (dist(m_objects[0].GetPosition(), m_objects[1].GetPosition()) <= radius)
-	//{
-	//	sf::Vector2f v1 = m_objects[0].GetVelocity();
-	//	sf::Vector2f v2 = m_objects[1].GetVelocity();
-	//	float m1 = 1;
-	//	float m2 = 1;
-	//	sf::Vector2f v1f = (v1 * (m1 - m2) + 2 * m1 * v2) / (m1 + m2);
-	//	sf::Vector2f v2f = (v2 * (m2 - m1) + 2 * m2 * v1) / (m1 + m2);
-	//	m_objects[0].ChangeVelocity(v1f);
-	//	m_objects[1].ChangeVelocity(v2f);
-	//	//printf("Hit");
-	//}
+
 	for (int i = 0; i < m_objects.size(); i++)
 	{
 		m_objects[i].ApplyForces(m_elapsed);
@@ -66,12 +54,6 @@ void Game::Update() {
 
 void Game::HandleInput()
 {
-	/*printf("Outside");
-	if (sf::Keyboard::A)
-	{
-		printf("Inside/n");
-		m_objects.push_back(Object(m_objectTexture));
-	}*/
 	sf::Event event;
 
 	while (m_window.GetWindow().pollEvent(event))
@@ -81,7 +63,6 @@ void Game::HandleInput()
 
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		{
-			//printf("sdfasdf\n");
 			sf::Vector2u pos = (sf::Vector2u)sf::Mouse::getPosition(m_window.GetWindow());
 			m_objects.push_back(Object(m_objectTexture, pos));
 		}
@@ -96,7 +77,6 @@ void Game::Render()
 		sf::Sprite m = m_objects[i].GetObject();
 		m_objects[i].SetTexture();
 		m_window.Draw(m);
-		//m_objects[i].Render(m_window);
 	}
 	m_window.EndDraw();
 }
@@ -113,7 +93,6 @@ void Game::RestartClock() { m_elapsed = m_clock.restart(); }
 void Game::MoveSprite(EventDetails* eventDetails) {
 	sf::Vector2u mousePos =
 		(sf::Vector2u)m_window.GetEventManager()->GetMousePos(&m_window.GetWindow());
-	//m_objects[0].SetPosition(mousePos);
 	m_objects.push_back(Object(m_objectTexture, mousePos));
 	std::cout << "Moving sprite to: "
 		<< mousePos.x << ":"

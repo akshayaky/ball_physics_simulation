@@ -23,13 +23,7 @@ private:
 	sf::Texture m_objectTexture;
 	sf::Vector2i m_increment;
 	sf::Sprite m_object;
-	float gravity;
-	float bounce;
-	float reduce;
-	float temp;
-	int maxIter;
-	int iter;
-	float bounce_temp;
+	
 
 	//physics parameters
 	sf::Vector2f position;

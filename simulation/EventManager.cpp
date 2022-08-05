@@ -165,5 +165,5 @@ void EventManager::LoadBindings() {
 
 void EventManager::SetFocus(const bool& l_focus)
 {
-	printf("sdfasdfas");
+	
 }

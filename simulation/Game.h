@@ -16,9 +16,6 @@ public:
 	void MoveSprite(EventDetails* eventDetails);
 	void CheckCollision();
 private:
-	//void MoveObject();
-	//void ApplyForces();
-	//void SetPosition(sf::Vector2u);
 	sf::Texture m_objectTexture;
 	Window m_window;
 	sf::Clock m_clock;
