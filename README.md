@@ -1,3 +1,3 @@
 # Simulation
 
-![alt text](demo.mkv)
+![alt text](demo.gif)
